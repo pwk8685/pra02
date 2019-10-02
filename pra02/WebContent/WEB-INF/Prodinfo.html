@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제품번호 조회창</title>
+<script type="text/javascript">
+function fn_validate(){
+	var searchproduct =document.searchproduct;	
+	var id = searchproduct.id.value;
+	var vname = searchproduct.vname.value;
+	
+		searchproduct.method ="post";
+		searchproduct.action ="prodinfo";
+		searchproduct.submit();
+}
+</script>
+</head>
+<body>
+<form name ="searchproduct">
+제품번호 : <input type="text" name="id">
+ 공급업체명 : <input type="text" name="vname">
+<input type="button" onClick="fn_validate()" value="조회">
+<input type="button" onClick="location.href='addProdinfo.html'" value="제품추가">
+<input type="hidden" name="command" value="searchproduct">
+</form>
+</body>
+</html>

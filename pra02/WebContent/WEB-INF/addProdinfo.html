@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제품 정보추가</title>
+<script type="text/javascript">
+		function fn_addProd(){
+		var addProd = document.addProd;
+		var addId = addProd.id.value;
+		var addNm = addProd.name.value;
+		var addPrice = addProd.price.value;
+		var addVendId = addProd.vend.value;
+		
+		if(addId.length == 0 || addId == ""){
+			alert("제품번호는 필수입니다.");
+		} if(addNm.length == 0 || addNm == ""){
+			alert("제품명은 필수입니다.");
+		} if(addPrice.length == 0 || addPrice == ""){
+			alert("제품가격은 필수입니다.");
+		} if(addVendId.length == 0 || addVendId == ""){
+			alert("공급업체명은 필수입니다.");
+		}else{
+			addProd.method = "get";
+			addProd.action = "prod";
+			addProd.submit();
+		}
+	}
+	
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="addProd">
+		<table>
+			<th>제품 추가</th>
+			<tr>
+				<td>제품 번호</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>제품명</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>제품가격</td>
+				<td><input type="text" name="pirce"></td>
+			</tr>
+			<td>제품 설명</td>
+				<td><input type="text" name="desc"></td>
+			</tr>
+			<tr>
+				<td>공급업체명</td>
+				<td><input type="text" name="vend"></td>
+			</tr>
+		</table>
+		<input type="button" value="가입하기" onclick="fn_sendMember()"> 
+		<input type="reset" value="다시 입력"> 
+		<input type="hidden" name="command" value="addMember" />
+	</form>
+</body>
+</html>
